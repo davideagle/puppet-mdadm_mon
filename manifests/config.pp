@@ -2,7 +2,7 @@
 #
 # This class should be considered private.
 #
-class mdadm::config(
+class mdadm_mon::config(
   $options = {}
 ) {
   validate_hash($options)
