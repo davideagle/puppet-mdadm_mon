@@ -1,8 +1,8 @@
-# == Class: mdadm::mdmonitor
+# == Class: mdadm_mon::mdmonitor
 #
 # This class should be considered private.
 #
-class mdadm::mdmonitor(
+class mdadm_mon::mdmonitor(
   $ensure = 'running',
   $enable = true,
 ) {

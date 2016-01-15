@@ -1,8 +1,8 @@
-# == Class: mdadm::raid_check
+# == Class: mdadm_mon::raid_check
 #
 # This class should be considered private.
 #
-class mdadm::raid_check(
+class mdadm_mon::raid_check(
   $options = {}
 ) {
   validate_hash($options)
@@ -11,13 +11,13 @@ class mdadm::raid_check(
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
-  $safe_options = merge($::mdadm::raid_check_default_options, $options)
+  $safe_options = merge($::mdadm_mon::raid_check_default_options, $options)
 
-  file { $::mdadm::raid_check_path:
+  file { $::mdadm_mon::raid_check_path:
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => template($::mdadm::raid_check_template),
+    content => template($::mdadm_mon::raid_check_template),
   }
 }

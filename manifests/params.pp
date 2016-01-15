@@ -1,9 +1,9 @@
-# == Class: mdadm::params
+# == Class: mdadm_mon::params
 #
 # This class should be considered private.
 #
-class mdadm::params {
-  # mdadm class default params
+class mdadm_mon::params {
+  # mdadm_mon class default params
   $config_file_manage = true
   $config_file_options = {}
   $service_force       = false
@@ -13,7 +13,7 @@ class mdadm::params {
   $raid_check_options  = {}
 
   # internal only
-  $mdadm_package       = 'mdadm'
+  $mdadm_mon_package       = 'mdadm_mon'
   $raid_check_path     = '/etc/sysconfig/raid-check'
 
   case $::osfamily {
